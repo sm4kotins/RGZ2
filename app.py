@@ -113,6 +113,10 @@ def toner():
 </html>
 '''
 
+@app.route('/lab2')
+def lab2():
+    return render_template('lab2.html')
+
 @app.route('/lab2/example')
 def example():
     name, number, groupe, course='Егор Панченко', 2, 'ФБИ-13', '3 курс'
