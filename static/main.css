@@ -101,3 +101,28 @@ button:hover {
     text-align: center;
     margin-top: 50px;
 }
+
+.railway-ticket-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.submit-button {
+    text-align: center;
+    margin-top: 10px;
+}
+p {
+    margin-bottom: 5px;
+}
+
+strong {
+    font-weight: bold
+}
