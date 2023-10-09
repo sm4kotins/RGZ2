@@ -1,11 +1,11 @@
-body {
-    margin: 0;
-}
+
 main {
+    font-family: Arial, sans-serif;
     margin-bottom: 40px;
     padding: 10px;
 }
 header{
+    font-family: Arial, sans-serif;
     margin-bottom: 30px;
     padding: 20px;
     background: lightgray;
@@ -19,4 +19,85 @@ footer{
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+a:hover{
+    color: #007bff;
+}
+div{
+    margin: 10px;
+}
+
+.order-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+}
+
+.drink-options,
+.additives {
+    margin-bottom: 15px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.total {
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.total-label {
+    margin-bottom: 5px;
+}
+
+.total-amount {
+    color: #ff6600;
+}
+
+.submit-button {
+    text-align: center;
+}
+
+button {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff4500;
+}
+.thank-you {
+    text-align: center;
+    margin-top: 50px;
 }

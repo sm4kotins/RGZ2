@@ -1,4 +1,4 @@
-from flask import Blueprint, redirect, url_for
+from flask import Blueprint, redirect, url_for, render_template
 lab1 = Blueprint('lab1',__name__)
 
 
@@ -12,28 +12,7 @@ def start():
 
 @lab1.route("/menu")
 def menu():
-    return """
-    <!doctype html>
-<html>
-    <head>
-        <title>НГТУ, ФБ, Лабораторные работы</title
-    </head>
-    <body>
-        <header>
-            НГТУ, ФБ, WEB-программирование, часть 2. Список лабораторных
-        </header>
-
-        <h1><a href="/lab1">Лабороторная работа 1</a></h1>
-        <h1><a href="/lab2">Лабороторная работа 2</a></h1>
-        <h1><a href="/lab3">Лабороторная работа 3</a></h1>
-
-        <footer>
-            &copy; Егор Панченко, ФБИ-13, 3 курс, 2023
-        </footer>
-    </body>
-</html>
-"""
-
+    return render_template('menu.html')
 
 @lab1.route("/lab1")
 def lab():

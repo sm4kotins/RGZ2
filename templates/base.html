@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}">
-    <title>Егор Панченко. {% block lab %}{% endblock %}</title>
+    <title>Егор Панченко. {% block lab %}{% endblock %} </title>
 </head>
 <body>
     <header>
-        WEB-программирование, часть 2. {{ self.lab() }}
+        WEB-программирование, часть 2. {{ self.lab() }} <a class="list" href="/menu"> | Меню</a>
     </header>
     <main>
-        <a href="/menu">МЕНЮ</a>
+
         {% block main %}{% endblock %}
     </main>
     <footer>
