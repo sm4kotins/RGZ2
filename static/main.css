@@ -126,3 +126,12 @@ p {
 strong {
     font-weight: bold
 }
+.success {
+    text-align: center;
+    margin-top: 50px;
+}
+.error-message {
+    color: #FF0000;
+    font-weight: bold;
+    margin-top: 10px;
+}
