@@ -135,3 +135,48 @@ strong {
     font-weight: bold;
     margin-top: 10px;
 }
+
+.fridge-button{
+    background-color: #0091ea;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    
+}
+
+.fridge-button:hover {
+    background-color: #0072c4;
+}
+
+.fridge {
+    color: black;
+    margin: 20px auto;
+    max-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.fridge-label-input {
+    display: block;
+
+    margin: 10px 0;
+}
+
+.fridge-text {
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+}
+
+.fridge-temperature {
+    font-size: 18px;
+    margin: 20px 0;
+    text-align: center;
+    color: #fff;
+}
