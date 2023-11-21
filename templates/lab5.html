@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        nav {
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 15px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #45a049;
+        }
+
+        #username {
+            display: inline-block;
+            margin-top: 0px;
+            font-size: 18px;
+            vertical-align: middle;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>База знаний</h1>
+        <nav>
+            <a href="#">Просмотр заметок</a>
+            <a href="#">Создание заметок</a>
+            <a href="/lab5/login">Логин</a>
+            <a href="/lab5/register">Регистрация</a>
+        </nav>
+        <div id="username">{{username}}</div>
+    </header>
+    <!-- Остальной контент вашей страницы -->
+</body>
+</html>
