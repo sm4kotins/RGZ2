@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}">
     <title>Егор Панченко. {% block lab %}{% endblock %} </title>
-    {% if request.cookies.get('text_color') and request.cookies.get('bg_color') and request.cookies.get('font_size') %}
+    {% if request.cookies.get('color') and request.cookies.get('bg_color') and request.cookies.get('font_size') %}
     <style>
         body {
             color: {{ request.cookies.get('color') }};
