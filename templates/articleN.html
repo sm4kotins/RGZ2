@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ article_title }}</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
 
         header {
@@ -53,56 +58,66 @@
             margin-top: 0px;
             font-size: 18px;
             vertical-align: middle;
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
         }
 
         h1 {
             text-align: center;
         }
 
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px;
-            border: none;
+        .article-container {
+            max-width: 800px; /* Ширина контейнера с заметкой */
+            margin: 20px auto; /* Центрирование по горизонтали и небольшой отступ сверху/снизу */
+            background-color: #fff;
+            padding: 20px;
             border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-content {
+            margin-top: 20px;
+        }
+
+        .article-content p {
+            margin-bottom: 10px;
+        }
+
+        .like-button {
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
             cursor: pointer;
-            width: 100%;
+            transition: background-color 0.3s ease;
         }
 
-        button:hover {
-            background-color: #45a049;
+        .like-button:hover {
+            background-color: #2980b9;
         }
 
-        .error {
-            color: red;
-            margin-top: 5px;
+        .like-count {
+            margin-left: 10px;
+        }
+
+        .favorite-button {
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #f39c12;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .favorite-button:hover {
+            background-color: #d35400;
+        }
+
+        .favorite-status {
+            margin-left: 10px;
         }
     </style>
 </head>
@@ -118,21 +133,22 @@
         </nav>
         <div id="username">{{username}}</div>
     </header>
-    <div class="container">
-        <form method="POST">
-            <h1>Страница регистрации</h1>
-            <div>
-                <label for="username">Логин</label>
-                <input type="text" name="username" placeholder="Введите логин">
-            </div>
-            <div>
-                <label for="password">Пароль</label>
-                <input type="password" name="password" placeholder="Введите пароль">
-            </div>
-            <button type="submit">Зарегистрироваться</button>
-            <!-- Реализуйте вывод ошибок. Например: -->
-            <div class="error">{{errors}}</div>
-        </form>
+    <div class="article-container">
+        <h1>{{ article_title }}</h1>
+        <div id="username">{{ username }}</div>
+        <div class="article-content">
+            {% for paragraph in article_text %}
+                <p>{{ paragraph }}</p>
+            {% endfor %}
+        </div>
+        
+        <div class="interaction-buttons">
+            <a href="/lab5/like_article/{{ article_id }}" class="like-button">Лайк</a>
+            <span class="like-count">{{ likes }}</span>
+
+            <a href="/lab5/add_to_favorites/{{ article_id }}" class="favorite-button">В избранное</a>
+            <span class="favorite-status">{{ "В избранном" if is_favorite else "Не в избранном" }}</span>
+        </div>
     </div>
 </body>
 </html>

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block lab %} Лабораторная работа 6{% endblock %}
+
+{% block main %}
+<link rel="stylesheet" href="{{ url_for('static', filename='lab5.css')}}">
+<div style="width: 400px; margin: 100px auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    <form method="post" style="text-align: center;">
+        <h1>Регистрация пользователя!</h1>
+
+        {% for error in errors %}
+            {{ error }}
+        {% endfor %}
+
+        <div>
+            <input class="pole" type="text" name="username" placeholder="Логин" style="padding: 8px; margin-bottom: 16px; border: 1px solid #ccc; border-radius: 4px;">
+        </div>
+
+        <div>
+            <input class="pole" type="password" name="password" placeholder="Пароль" style="padding: 8px; margin-bottom: 16px; border: 1px solid #ccc; border-radius: 4px;">
+        </div>
+
+        <button style="padding: 10px 15px; background-color: #4caf50; color: #fff; border: none; border-radius: 4px; cursor: pointer;" type="submit">Зарегистрироваться</button>
+    </form>
+    <a href="/lab6" style="text-decoration: none; color: #fff;">
+        <button style="padding: 10px 15px; background-color: #f44336; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Вернуться назад</button>
+    </a>
+</div>
+{% endblock %}

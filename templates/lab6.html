@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 6{% endblock %}
+
+{% block main %}
+    <div style="width: 600px; margin: 50px auto; text-align: center;">
+        <h1 style="color: #333;">База знаний</h1>
+        <ol style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 10px;">
+                <a href="/lab6/articles" style="color: #007bff; text-decoration: none;">Посмотреть заметки</a>
+            </li>
+            <li style="margin-bottom: 10px;">
+                <a href="/lab6/new_article" style="color: #007bff; text-decoration: none;">Создать заметку</a>
+            </li>
+            <li style="margin-bottom: 10px;">
+                <a href="/lab6/login" style="color: #007bff; text-decoration: none;">Логин</a>
+            </li>
+            <li style="margin-bottom: 10px;">
+                <a href="/lab6/register" style="color: #007bff; text-decoration: none;">Регистрация</a>
+            </li>
+        </ol>
+        <p style="color: #555;">Добро пожаловать, {{ current_user.username }}!</p>
+        {% if user_is_authenticated %}
+            <a href="{{ url_for('lab6.logout') }}" style="color: #f44336; text-decoration: none;">Выход</a>
+        {% endif %}
+    </div>
+{% endblock %}

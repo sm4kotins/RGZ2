@@ -9,6 +9,10 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
 
         header {
@@ -53,13 +57,7 @@
             margin-top: 0px;
             font-size: 18px;
             vertical-align: middle;
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            display: inline-block;
         }
 
         form {
@@ -67,6 +65,9 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 100%;
+            margin-top: 20px;
         }
 
         h1 {
@@ -78,7 +79,8 @@
             margin-top: 10px;
         }
 
-        input {
+        input,
+        textarea {
             width: 100%;
             padding: 10px;
             margin-top: 5px;
@@ -102,7 +104,7 @@
 
         .error {
             color: red;
-            margin-top: 5px;
+            margin: 10px;
         }
     </style>
 </head>
@@ -118,21 +120,20 @@
         </nav>
         <div id="username">{{username}}</div>
     </header>
-    <div class="container">
-        <form method="POST">
-            <h1>Страница регистрации</h1>
-            <div>
-                <label for="username">Логин</label>
-                <input type="text" name="username" placeholder="Введите логин">
-            </div>
-            <div>
-                <label for="password">Пароль</label>
-                <input type="password" name="password" placeholder="Введите пароль">
-            </div>
-            <button type="submit">Зарегистрироваться</button>
-            <!-- Реализуйте вывод ошибок. Например: -->
-            <div class="error">{{errors}}</div>
-        </form>
-    </div>
+    
+    <form method="POST">
+        <h1>Добавить статью</h1>
+        <div>
+            <label for="title_article">Заголовок</label>
+            <input type="text" id="title_article" name="title_article" placeholder="Введите заголовок">
+        </div>
+        <div>
+            <label for="text_article">Содержание</label>
+            <textarea id="text_article" name="text_article" placeholder="Введите содержание"></textarea>
+        </div>
+        <div class="error">{{errors}}</div>
+        <button type="submit">Добавить статью</button>
+    </form>
+    
 </body>
 </html>

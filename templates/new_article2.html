@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 6{% endblock %}
+
+{% block main %}
+<div class="new-note-container" style="width: 600px; margin: 50px auto; text-align: center;">
+    <h1 style="color: #333;">Новая заметка</h1>
+    {% if sent %}
+        <p class="success-message" style="color: #4caf50;">Отправлено!</p>
+    {% endif %}
+    {% if error %}
+        <p class="error-message" style="color: #f44336;">{{ error }}</p>
+    {% endif %}
+    <form method="POST" action="{{ url_for('lab6.create_article') }}" style="margin-top: 20px;">
+        <div style="margin-bottom: 10px;">
+            <label for="title" style="color: #555;">Название статьи:</label>
+        </div>
+        <div style="margin-bottom: 20px;">
+            <input name='title_article' type='text' placeholder="Введите название" required style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 100%;">
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label for="text" style="color: #555;">Текст статьи:</label>
+        </div>
+        <div style="margin-bottom: 20px;">
+            <textarea name="text_article" placeholder="Введите текст" rows="10" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" required></textarea>
+        </div>
+        <div>
+            <input type="submit" value="Применить" style="padding: 10px 15px; background-color: #4caf50; color: #fff; border: none; border-radius: 4px; cursor: pointer;">
+        </div>
+    </form>
+</div>
+<div class="back-link" style="text-align: center; margin-top: 20px;">
+    <p><a href="/lab6" style="color: #007bff; text-decoration: none;">Вернуться назад</a></p>
+</div>
+{% endblock %}

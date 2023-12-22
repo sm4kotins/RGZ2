@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 6{% endblock %}
+
+{% block main %}
+    <div style="width: 600px; margin: 50px auto;">
+        <h1 style="color: #333; text-align: center;">{{ article.title }}</h1>
+        <p style="color: #555; text-align: justify;">{{ article.article_text }}</p>
+        <a href="{{ url_for('lab6.articles_list') }}" style="display: block; margin-top: 20px; text-align: center; color: #007bff; text-decoration: none;">Назад к списку статей</a>
+    </div>
+{% endblock %}
