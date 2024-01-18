@@ -1,28 +1,18 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
-{% block lab %}Лабораторная работа 4{% endblock %}
-
-{% block main %}
-<div class="order-form">
-    <h1>Вход</h1>
-    <h2>Пожалуйста, авторизируйтесь</h2>
-    {% if error %}
-    <p class="error-message">{{ error }}</p>
-    {% endif %}
-    <form method="post">
-        <div class="form-group">
-            <label for="username">Пользователь:</label>
-            <input type="text" id="username" name="username" value="{{ username }}">
-        </div>
-        <div class="form-group">
-            <label for="password">Пароль:</label>
-            <input type="password" id="password" name="password" value="{{ password }}">
-        </div>
-        <div class="submit-button">
-            <button type="submit">Войти</button>
-            <button type="reset">Отмена</button>
-        </div>
-    </form>
-</div>
-
+{% block content %}
+<form method="POST">
+    <h1>Страница входа</h1>
+    <div>
+        <label for="username">Логин</label>
+        <input type="text" name="username" placeholder="Введите логин">
+    </div>
+    <div>
+        <label for="password">Пароль</label>
+        <input type="password" name="password" placeholder="Введите пароль">
+    </div>
+    <button type="submit">Войти</button>
+    <!-- Реализуйте вывод ошибок. Например: -->
+    <div class="error">{{errors}}</div>
+</form>
 {% endblock %}

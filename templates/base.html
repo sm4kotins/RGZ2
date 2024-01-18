@@ -3,29 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}">
-    <title>Егор Панченко. {% block lab %}{% endblock %} </title>
-    {% if request.cookies.get('color') and request.cookies.get('bg_color') and request.cookies.get('font_size') %}
-    <style>
-        body {
-            color: {{ request.cookies.get('color') }};
-            background-color: {{ request.cookies.get('bg_color') }};
-            font-size: {{ request.cookies.get('font_size') }}px;
-        }
-    </style>
-    {% endif %}
-    {% block script%}{%endblock%}
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <header>
-        WEB-программирование, часть 2. {{ self.lab() }} <a class="list" href="/menu"> | Меню</a>
-    </header>
-    <main>
-
-        {% block main %}{% endblock %}
-    </main>
-    <footer>
-        &copy; Егор Панченко, ФБИ-13, 3 курс, 2023
-    </footer>
+    <nav>
+        <ul>
+            <li><a href="/sessions">Сеансы</a></li>
+            <li><a href="/afisha">Афиша</a></li>
+            <li><a href="/register">Регистрация</a></li>
+            <li><a href="/login">Вход</a></li>
+            <li><a href="/my_account">Мой аккаунт</a></li> 
+        </ul>
+    </nav>
+    <div>
+        {% block content %}{% endblock %}
+    </div>
 </body>
 </html>

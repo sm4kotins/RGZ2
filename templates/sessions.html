@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Sessions</h2>
+  {% for session in sessions %}
+    <div>
+      <p>{{ session.title }} - {{ session.date_time }}</p>
+      <form method="post" action="{{ url_for('cinema.reserve_seat', session_id=session.id) }}">
+        <label for="seat">Choose a seat:</label>
+        <select name="seat" id="seat">
+            {% for seat in session.seats %}
+                <option value="{{ seat }}">{{ seat }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Забронировать место</button>
+    </form>
+    
+      
+  {% endfor %}
+{% endblock %}

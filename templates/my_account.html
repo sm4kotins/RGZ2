@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>My Account</h2>
+
+  <div>
+    <h3>User Information</h3>
+    <p>Username: {{ user_info[1] }}</p>
+  </div>
+
+  <div>
+    <h3>Reserved Sessions</h3>
+    {% if reservations %}
+      <ul>
+        {% for reservation in reservations %}
+        <div>
+            Session: {{ reservation[4] }}<br>
+            Movie: {{ reservation[5] }}<br>  {# Вывод названия фильма #}
+            Seat: {{ reservation[3] }}<br>
+            <form action="{{ url_for('cinema.cancel_reservation', reservation_id=reservation[0]) }}" method="post">
+              <button type="submit">Cancel Reservation</button>
+            </form>
+        </div>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No reserved sessions</p>
+    {% endif %}
+  </div>
+
+  <div>
+    <h3>Delete Account</h3>
+    <form method="post" action="{{ url_for('cinema.delete_account') }}">
+      <button type="submit" onclick="return confirm('Are you sure you want to delete your account?')">Delete Account</button>
+    </form>
+  </div>
+{% endblock %}
